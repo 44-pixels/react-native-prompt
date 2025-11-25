@@ -1,9 +1,7 @@
 import {
-  NativeModules,
-  Platform,
-  AlertButton,
-  AlertType,
-  Alert,
+  Alert, AlertButton,
+  AlertType, NativeModules,
+  Platform
 } from "react-native";
 
 const { RNAlertPrompt } = NativeModules;
@@ -61,6 +59,7 @@ export function prompt(
         },
         {
           text: "OK",
+          //@ts-ignore
           onPress: isFunction ? (callbackOrButtons as OnPress) : null,
         },
       ];
@@ -78,6 +77,7 @@ export function prompt(
       type,
       defaultValue,
       keyboardType,
+      //@ts-ignore
       (index, input) => {
         // react native doesn't support more 2 callbacks
         // so invoke there
