@@ -8,7 +8,7 @@ class RNAlertPromptModule internal constructor(reactContext: ReactApplicationCon
   @ReactMethod
   fun prompt(title: String, message: String?, buttonsOptions: ReadableArray, type: String?,
              defaultValue: String?, keyboardType: String?, callback: Callback) {
-    PromptDialog(currentActivity!!, title, message, buttonsOptions, type, defaultValue, keyboardType, callback).show()
+    PromptDialog(reactApplicationContext.currentActivity!!, title, message, buttonsOptions, type, defaultValue, keyboardType, callback).show()
   }
 
   override fun getName(): String {
